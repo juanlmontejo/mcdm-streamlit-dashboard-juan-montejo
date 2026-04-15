@@ -80,6 +80,23 @@ selected_method_names = st.sidebar.multiselect(
     default=['TOPSIS', 'SAW']
 )
 
+# Choosing a color
+color = st.color_picker("Pick A Color", "#00f900")
+
+st.markdown(
+    f"""
+    <style>
+    h1, h2, h3 {{
+        color: {color};
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.write("The current color is", color)
+
+# Rating the dashboard
 sentiment_mapping = ["one", "two", "three", "four", "five"]
 selected = st.feedback("stars")
 if selected is not None:
@@ -120,20 +137,7 @@ if st.button("Run MCDM Analysis"):
         visuals.polar_plot(ranks, labels=selected_method_names, legend_ncol=2, ax=ax)
         st.pyplot(fig)
 
-color = st.color_picker("Pick A Color", "#00f900")
 
-st.markdown(
-    f"""
-    <style>
-    h1, h2, h3 {{
-        color: {color};
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-st.write("The current color is", color)
 
 csv = edited_df.to_csv(index=False).encode('utf-8')
 st.download_button(
