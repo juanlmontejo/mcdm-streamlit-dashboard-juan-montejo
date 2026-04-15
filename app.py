@@ -114,3 +114,23 @@ if st.button("Run MCDM Analysis"):
         fig, ax = plt.subplots(figsize=(7, 7), dpi=150, tight_layout=True, subplot_kw=dict(projection='polar'))
         visuals.polar_plot(ranks, labels=selected_method_names, legend_ncol=2, ax=ax)
         st.pyplot(fig)
+
+st.color_picker(
+    label= "Color picker", 
+    value=None, 
+    key=None, 
+    help=None, 
+    on_change=None, 
+    args=None, kwargs=None, *, 
+    disabled=False, 
+    label_visibility="visible", 
+    width="content", 
+    bind=None)
+
+st.download_button(
+    label="Download CSV",
+    data=csv,
+    file_name="data.csv",
+    mime="text/csv",
+    icon=":material/download:",
+)
