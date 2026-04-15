@@ -115,17 +115,8 @@ if st.button("Run MCDM Analysis"):
         visuals.polar_plot(ranks, labels=selected_method_names, legend_ncol=2, ax=ax)
         st.pyplot(fig)
 
-st.color_picker(
-    label= "Color picker", 
-    value=None, 
-    key=None, 
-    help=None, 
-    on_change=None, 
-    args=None, kwargs=None, *, 
-    disabled=False, 
-    label_visibility="visible", 
-    width="content", 
-    bind=None)
+color = st.color_picker("Pick A Color", "#00f900")
+st.write("The current color is", color)
 
 st.download_button(
     label="Download CSV",
