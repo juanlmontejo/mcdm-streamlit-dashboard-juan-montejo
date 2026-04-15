@@ -82,7 +82,7 @@ selected_method_names = st.sidebar.multiselect(
 
 # Choosing a color
 st.sidebar.header("4. Choose a page color")
-color = st.color_picker("Pick A Color", "#00f900")
+color = st.sidebar.color_picker("Pick A Color", "#00f900")
 
 st.markdown(
     f"""
@@ -98,8 +98,9 @@ st.markdown(
 st.write("The current color is", color)
 
 # Rating the dashboard
+st.sidebar.header("5. Rate the dashboard")
 sentiment_mapping = ["one", "two", "three", "four", "five"]
-selected = st.feedback("stars")
+selected = st.sidebar.feedback("stars")
 if selected is not None:
     st.markdown(f"You selected {sentiment_mapping[selected]} star(s).")
 
