@@ -80,6 +80,11 @@ selected_method_names = st.sidebar.multiselect(
     default=['TOPSIS', 'SAW']
 )
 
+sentiment_mapping = ["one", "two", "three", "four", "five"]
+selected = st.feedback("stars")
+if selected is not None:
+    st.markdown(f"You selected {sentiment_mapping[selected]} star(s).")
+
 # --- 4. EXECUTE & DISPLAY RESULTS ---
 if st.button("Run MCDM Analysis"):
     if not selected_method_names:
@@ -120,8 +125,8 @@ color = st.color_picker("Pick A Color", "#00f900")
 st.markdown(
     f"""
     <style>
-    .stApp {{
-        background-color: {color};
+    h1, h2, h3 {{
+        color: {color};
     }}
     </style>
     """,
