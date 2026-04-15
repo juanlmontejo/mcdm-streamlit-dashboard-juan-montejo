@@ -81,6 +81,7 @@ selected_method_names = st.sidebar.multiselect(
 )
 
 # Choosing a color
+st.sidebar.header("4. Choose a page color")
 color = st.color_picker("Pick A Color", "#00f900")
 
 st.markdown(
