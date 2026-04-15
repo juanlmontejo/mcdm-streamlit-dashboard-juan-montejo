@@ -116,8 +116,21 @@ if st.button("Run MCDM Analysis"):
         st.pyplot(fig)
 
 color = st.color_picker("Pick A Color", "#00f900")
+
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-color: {color};
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.write("The current color is", color)
 
+csv = edited_df.to_csv(index=False).encode('utf-8')
 st.download_button(
     label="Download CSV",
     data=csv,
