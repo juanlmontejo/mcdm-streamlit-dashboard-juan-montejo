@@ -82,7 +82,7 @@ selected_method_names = st.sidebar.multiselect(
 
 # Choosing a color
 st.sidebar.header("4. Choose a page color")
-color = st.sidebar.color_picker("Pick A Color", "#ffffff")
+color = st.sidebar.color_picker("Pick A Color","#ffffff")
 
 st.markdown(
     f"""
@@ -95,7 +95,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.write("The current color is", color)
+st.sidebar.write("The current color is", color)
 
 # Rating the dashboard
 st.sidebar.header("5. Rate the dashboard")
