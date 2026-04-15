@@ -87,8 +87,8 @@ color = st.sidebar.color_picker("Pick A Color", "#00f900")
 st.markdown(
     f"""
     <style>
-    h1, h2, h3 {{
-        color: {color};
+    .stApp {{
+        background-color: {color};
     }}
     </style>
     """,
